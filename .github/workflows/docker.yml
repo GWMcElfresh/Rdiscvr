@@ -20,7 +20,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/bimberlabinternal/rdiscvr
+          images: ghcr.io/gwmcelfresh/rdiscvr
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -52,7 +52,7 @@ jobs:
           file: ./Dockerfile
           pull: true
           push: ${{github.ref == 'refs/heads/master'}}
-          tags: ghcr.io/bimberlabinternal/rdiscvr:latest
+          tags: ghcr.io/gwmcelfresh/rdiscvr:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.PAT }}
             GITHUB_PAT=${{ secrets.PAT }}
