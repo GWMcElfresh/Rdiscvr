@@ -47,7 +47,7 @@ RUN --mount=type=secret,id=GITHUB_PAT \
     && echo "GH: $GITHUB_PAT" \
     && Rscript -e "BiocManager::install(ask = F, upgrade = 'always');" \
     # Force 4.x for Seurat
-    && Rscript -e "devtools::install_version('Seurat', version = '5.0.1', upgrade = 'always')" \
+    && Rscript -e "devtools::install_version('Seurat', version = '5.0.0', upgrade = 'always')" \
     && Rscript -e "devtools::install_deps(pkg = '.', dependencies = TRUE, upgrade = 'never');" \
     # Due to Matrix/SeuratObject: https://github.com/mojaveazure/seurat-object/issues/166
     && Rscript -e "install.packages('SeuratObject', ask = FALSE, force = TRUE, type = 'source', repos = 'https://cloud.r-project.org')" \
